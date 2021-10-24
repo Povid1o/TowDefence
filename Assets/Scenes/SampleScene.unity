@@ -2377,12 +2377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4203551134218221865, guid: b4de3694a2c0d41b28bde8351f7f9d55, type: 3}
-  wave:
-    name: Wave 1
-    index: 1
-    brakeToNextWave: 10
-    enemyCount: 0
-    waveType1: 0
+  waves: []
   road:
   - {fileID: 1989062103}
   - {fileID: 37809695}
@@ -2459,7 +2454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589413702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.75, y: 0.92999995, z: 0}
+  m_LocalPosition: {x: -1.75, y: 0.92999995, z: 0.02}
   m_LocalScale: {x: 1, y: 1.4552349, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2841,17 +2836,18 @@ MonoBehaviour:
     enemyCount: 15
     waveType1: 0
   - name: Wave 2
-    index: 1
+    index: 2
     brakeToNextWave: 10
-    enemyCount: 0
-    waveType1: 0
-  - name: Wave 1
-    index: 1
+    enemyCount: 20
+    waveType1: 1
+  - name: Wave 3
+    index: 3
     brakeToNextWave: 10
-    enemyCount: 0
-    waveType1: 0
+    enemyCount: 30
+    waveType1: 2
   _tower: {fileID: 516939076}
   time: 0
+  waitTime: 0
 --- !u!4 &1796612710
 Transform:
   m_ObjectHideFlags: 0
