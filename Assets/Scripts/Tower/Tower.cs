@@ -7,11 +7,9 @@ public class Tower : MonoBehaviour
     public HealthTower health;
     public List<Enemy> enemyList = new List<Enemy>();
     private Transform target;
-    bool isDead = false;
 
     private void FindTarget()
     {
-        //float x = Vector3.Distance(new Vector3(0, 0, 0), transform.position);
         float minDistance = Mathf.Infinity;
 
         foreach (Enemy enemy in enemyList)

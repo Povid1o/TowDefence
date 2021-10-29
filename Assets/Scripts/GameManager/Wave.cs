@@ -13,9 +13,7 @@ public enum WaveType
 public class Wave 
 {
     public string name = "Wave";
-    public int index = 1;
     public float brakeToNextWave = 10f;
     public int enemyCount = 0;
-    public WaveType waveType1 = WaveType.Easy;
 
 }

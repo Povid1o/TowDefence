@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed = 1f;
     public Transform[] target;
-    private int Index = 0;
-    public HealthEnemy health;
-    private bool enemyIsDead=false;
-
-    public static object enemy { get; internal set; }
-
+    
+    private HealthEnemy _health;
+    private int _targetIndex = 0;
+    
     private void Start()
     {
-        health = new HealthEnemy(10, this);
+        _health = new HealthEnemy(10, this);
     }
 
     private void FixedUpdate()
@@ -24,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     private void OnMouseDown()
     {
-        health.Decrease(5);
+        _health.Decrease(5);
     }
 
     private void Move()
@@ -32,15 +30,14 @@ public class Enemy : MonoBehaviour
         float step = speed * Time.deltaTime;
         transform.position =
             Vector3.MoveTowards(transform.position,
-            new Vector3(target[Index].position.x, transform.position.y, target[Index].position.z),
+            new Vector3(target[_targetIndex].position.x, transform.position.y, target[_targetIndex].position.z),
             step);
-        if (transform.position == new Vector3(target[Index].position.x, transform.position.y, target[Index].position.z))
+        if (transform.position == new Vector3(target[_targetIndex].position.x, transform.position.y, target[_targetIndex].position.z))
         {
-            Index++;
-            if (Index == target.Length)
+            _targetIndex++;
+            if (_targetIndex == target.Length)
             {
                 Destroy(gameObject);
-                enemyIsDead = true;
             }
         }
     }
